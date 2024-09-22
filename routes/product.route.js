@@ -1,6 +1,7 @@
 let express = require("express");
 const { get_product, create_product, delete_product, update_product } = require("../controller/product.controller");
-let multer = require("multer")
+let multer = require("multer");
+const { tokenVerify } = require("../middleware.js/tokenverify");
 let storage = multer.diskStorage({})
 let upload = multer({ storage: storage }).single('image')
 
